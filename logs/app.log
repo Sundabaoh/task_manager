@@ -1,0 +1,43 @@
+2025-04-09 16:43:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-09 16:43:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-09 16:43:02 [main] WARN  org.taskmanager.dao.UserDao - Пользователь с username=test5 уже существует. Операция прервана.
+2025-04-09 16:46:05 [main] WARN  org.taskmanager.dao.UserDao - Пользователь с username=test5 уже существует. Операция прервана.
+2025-04-09 18:18:01 [main] WARN  org.taskmanager.dao.UserDao - Неверный формат входных данных
+2025-04-09 18:19:01 [main] ERROR org.taskmanager.dao.UserDao - ошибка при обновлении пользователя
+java.sql.SQLSyntaxErrorException: Unknown column 'id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.taskmanager.dao.UserDao.updateUserById(UserDao.java:116)
+	at org.taskmanager.dao.UserDao.updateUsername(UserDao.java:97)
+	at org.taskmanager.Main.main(Main.java:11)
+2025-04-09 18:19:01 [main] ERROR org.taskmanager.dao.UserDao - Возникла непредвиденная ошибка
+java.lang.RuntimeException: ошибка при обновлении пользователя
+	at org.taskmanager.dao.UserDao.updateUserById(UserDao.java:126)
+	at org.taskmanager.dao.UserDao.updateUsername(UserDao.java:97)
+	at org.taskmanager.Main.main(Main.java:11)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.taskmanager.dao.UserDao.updateUserById(UserDao.java:116)
+	... 2 common frames omitted
+2025-04-09 18:19:54 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен
+2025-04-09 18:24:02 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен
+2025-04-09 18:24:02 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен
+2025-04-09 18:24:02 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен
+2025-04-09 18:29:49 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен username
+2025-04-09 18:29:49 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен role
+2025-04-09 18:29:49 [main] INFO  org.taskmanager.dao.UserDao - Пользователь с id=2 был обновлен password
